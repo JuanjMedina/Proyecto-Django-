@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
-
+from django.contrib.messages import constants as mensajes_error
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -42,7 +42,10 @@ INSTALLED_APPS = [
     'Blog',
     'Contacto',
     'Tienda',
-    'Carro'
+    'Carro',
+    'Autenticacion',
+    'crispy_forms',
+    'Pedidos',
 ]
 
 MIDDLEWARE = [
@@ -138,3 +141,13 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'jmedinaguerrero847@gmail.com '
 EMAIL_HOST_PASSWORD = ('blvffvzfatvvjism')
+
+CRISPY_TEMPLATE_PACK = 'Bootstrap4'
+
+MESSAGE_TAGS = {
+    mensajes_error.DEBUG: 'alert-dark',
+    mensajes_error.INFO: 'alert-info',
+    mensajes_error.SUCCESS: 'alert-success',
+    mensajes_error.WARNING: 'alert-warning',
+    mensajes_error.ERROR: 'alert-danger',
+}

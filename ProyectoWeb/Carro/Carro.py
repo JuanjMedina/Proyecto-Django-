@@ -5,7 +5,8 @@ class Carro():
         carro = self.session.get("carro")
         if not carro:
             carro= self.session["carro"]={}
-        
+        else:
+            pass
         self.carro = carro
 
     def agregar(self,producto):
